@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class ="FormBox">
+    <div class="stat">
+      <div class="form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" *ngIf="!showSignUpForm">
+          <div class="inputField">
+            <label>
+              Email 
+              <input type="email" formControlName="email" placeholder="Enter your email here">
+            </label>
+          </div>
+          <div class="inputField">
+            <label>
+              Password
+              <input type="password" formControlName="password" placeholder="Enter your password">
+            </label>
+          </div>
+          <button class="btn" type="submit">Send</button>
+        </form>
+        
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm)"  *ngIf="showSignUpForm">
+          <div class="inputField">
+            <label>
+              Full Name 
+              <input type="text" formControlName="fName" placeholder="Enter your full name">
+            </label>
+          </div>
+          <div class="inputField">
+            <label>
+              Email 
+              <input type="email" formControlName="email" placeholder="Enter your email here">
+            </label>
+          </div>
+          <div class="inputField">
+            <label>
+              Password
+              <input type="password" formControlName="password" placeholder="Enter your password">
+            </label>
+          </div>
+          <div class="inputField">
+            <label>
+              Confirm Password
+              <input type="password" formControlName="cPassword" placeholder="Enter your password again">
+            </label>
+          </div>
+          <button class="btn" type="submit">Send</button>
+        </form>
+        <div class="statement" *ngIf = "!showSignUpForm">
+          <p><span (click)="showSignUp('signUp')" class="pointer"><u>Click here </u></span>to join community</p>
+        </div>
+        <div class="statement" *ngIf = "showSignUpForm">
+          <p><span (click)="showSignUp('login')" class="pointer"><u>Click here </u></span>to log into the community</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
