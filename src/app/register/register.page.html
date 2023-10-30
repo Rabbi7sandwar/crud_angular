@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Log In</ion-title>
+    <ion-title *ngIf="!showSignUpForm">Log In</ion-title>
+    <ion-title *ngIf="showSignUpForm">Create an account</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,7 +9,7 @@
   <div class ="FormBox">
     <div class="stat">
       <div class="form">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" *ngIf="!showSignUpForm">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm,'login')" *ngIf="!showSignUpForm">
           <div class="inputField">
             <label>
               Email 
@@ -24,7 +25,7 @@
           <button class="btn" type="submit">Send</button>
         </form>
         
-        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm)"  *ngIf="showSignUpForm">
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm,'register')"  *ngIf="showSignUpForm">
           <div class="inputField">
             <label>
               Full Name 

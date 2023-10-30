@@ -20,7 +20,7 @@ ion-title{
 .FormBox{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     height: 100%;
     margin: auto;
     justify-content: center;
@@ -39,11 +39,14 @@ ion-title{
         padding: 10%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        // align-items: center;
         border-radius: 11%;
     }
     .inputField{
         color: aquamarine;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         input{
             margin: 5% 0%;
             border-color: aquamarine;
