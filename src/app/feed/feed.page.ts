@@ -23,6 +23,9 @@ export class FeedPage implements OnInit {
     this.pageData = this.dataService.data()
   }
 
+  create(){
+    this.router.navigate(['/','blog-form']);
+  }
 
 
 }

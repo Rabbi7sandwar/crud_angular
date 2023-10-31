@@ -59,3 +59,18 @@ ion-title{
         border: 2px solid mediumaquamarine;
     }
 }
+
+.screen{
+    width: 100%;
+    height: 100%;
+    .main{
+        width: 96%;
+       padding: 2%;
+    }
+}
+
+.addBtn{
+    display: flex;
+    justify-content: flex-end;
+}
+
