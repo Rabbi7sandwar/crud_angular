@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-feed',
@@ -7,14 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./feed.page.scss'],
 })
 export class FeedPage implements OnInit {
-
-  constructor( private router: Router) { }
+  pageData: any
+  constructor( private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
+    this.list()
   }
 
   goBack(){
     this.router.navigate(['/']);
   }
+
+  list(){
+    this.pageData = this.dataService.data()
+  }
+
+
 
 }
