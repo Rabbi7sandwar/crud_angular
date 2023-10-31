@@ -19,6 +19,8 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
     this.login()
     this.signUp()
+    this.loginForm.reset()
+    this.signUpForm.reset()
   }
 
   showSignUp(status: any) {
